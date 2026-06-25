@@ -1,1 +1,97 @@
-{"spot": 25000, "atm": 25000, "time": "test"}
+{
+  "spot": 25000,
+  "atm": 25000,
+  "timestamp": "2026-06-25 08:35:06.549890",
+  "strikes": [
+    {
+      "strike": 24300,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 24400,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 24500,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 24600,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 24700,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 24800,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 24900,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 25000,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 25100,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 25200,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 25300,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 25400,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 25500,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 25600,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    },
+    {
+      "strike": 25700,
+      "type": "CE/PE",
+      "oi": 0,
+      "change_oi": 0
+    }
+  ]
+}
