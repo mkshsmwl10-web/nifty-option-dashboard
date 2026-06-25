@@ -6,9 +6,6 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-steps:
-  - name: Test Workflow
-    run: echo Workflow is working
-steps:
-  - name: Test Workflow
+ steps:
+      - name: Test Workflow
     run: echo Workflow is working
