@@ -2,26 +2,25 @@ import json
 import requests
 from datetime import datetime
 
-headers = {
-    "User-Agent": "Mozilla/5.0"
-}
+headers = {"User-Agent": "Mozilla/5.0"}
 
-spot = None
+def get_spot():
+    try:
+        url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=%5ENSEI"
+        r = requests.get(url, headers=headers, timeout=5)
+        d = r.json()
 
-try:
-    url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=%5ENSEI"
-    res = requests.get(url, headers=headers, timeout=10)
+        if "quoteResponse" in d and d["quoteResponse"]["result"]:
+            return float(d["quoteResponse"]["result"][0]["regularMarketPrice"])
+    except:
+        pass
 
-    data = res.json()
+    return None
 
-    # safe check (IMPORTANT)
-    if "quoteResponse" in data and data["quoteResponse"]["result"]:
-        spot = data["quoteResponse"]["result"][0]["regularMarketPrice"]
 
-except Exception as e:
-    print("API failed:", e)
+spot = get_spot()
 
-# fallback (guaranteed working)
+# FINAL fallback
 if spot is None:
     spot = 25000
 
@@ -40,11 +39,11 @@ output = {
     "spot": spot,
     "atm": atm,
     "timestamp": str(datetime.now()),
-    "mode": "live_or_fallback",
+    "status": "hybrid_system",
     "strikes": strikes
 }
 
 with open("option_data.json", "w") as f:
     json.dump(output, f, indent=2)
 
-print("Dashboard updated")
+print("HYBRID DASHBOARD UPDATED")
