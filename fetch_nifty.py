@@ -2,38 +2,17 @@ import json
 import requests
 from datetime import datetime
 
-url = "https://www.nseindia.com/api/option-chain-indices?symbol=NIFTY"
+# Safe public API (reliable for GitHub Actions)
+url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=%5ENSEI"
 
 headers = {
-    "User-Agent": "Mozilla/5.0",
-    "Accept": "application/json",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Referer": "https://www.nseindia.com"
+    "User-Agent": "Mozilla/5.0"
 }
 
-session = requests.Session()
+res = requests.get(url, headers=headers)
+data = res.json()
 
-try:
-    # first hit homepage (important)
-    session.get("https://www.nseindia.com", headers=headers, timeout=10)
-
-    # then API call
-    response = session.get(url, headers=headers, timeout=10)
-
-    # debug safety
-    if response.status_code != 200:
-        raise Exception(f"HTTP {response.status_code}")
-
-    data = response.json()
-
-    spot = data["records"]["underlyingValue"]
-
-except Exception as e:
-    print("NSE blocked or failed, using fallback")
-    print(str(e))
-
-    # fallback (safe)
-    spot = 25000
+spot = data["quoteResponse"]["result"][0]["regularMarketPrice"]
 
 atm = round(spot / 100) * 100
 
@@ -49,12 +28,12 @@ for i in range(-7, 8):
 output = {
     "spot": spot,
     "atm": atm,
-    "timestamp": str(datetime.now()),
-    "note": "fallback mode if NSE blocked",
+    "time": str(datetime.now()),
+    "source": "yahoo",
     "strikes": strikes
 }
 
 with open("option_data.json", "w") as f:
     json.dump(output, f, indent=2)
 
-print("Dashboard updated")
+print("LIVE SPOT UPDATED")
