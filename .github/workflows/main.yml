@@ -1,8 +1,6 @@
 name: Update Nifty Option Data
 
 on:
-schedule:
-- cron: '*/5 * * * *'
 workflow_dispatch:
 
 jobs:
@@ -15,7 +13,5 @@ steps:
     uses: actions/checkout@v4
 
   - name: Test Workflow
-    run: |
-      echo "Workflow is working"
-      date
+    run: echo "Workflow is working"
 ```
