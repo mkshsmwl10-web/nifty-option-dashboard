@@ -1,8 +1,8 @@
 {
   "spot": 25000,
   "atm": 25000,
-  "timestamp": "2026-06-25 08:45:05.992365",
-  "note": "fallback mode if NSE blocked",
+  "timestamp": "2026-06-25 08:53:26.016714",
+  "mode": "live_or_fallback",
   "strikes": [
     {
       "strike": 24300,
