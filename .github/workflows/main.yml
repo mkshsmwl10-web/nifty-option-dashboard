@@ -1,10 +1,23 @@
-name: test
+name: Update Nifty Option Data
 
 on:
   workflow_dispatch:
 
 jobs:
-  test:
+  update:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo hello
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run Python Script
+        run: python fetch_nifty.py
+
+      - name: Commit JSON file
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add option_data.json
+          git commit -m "Update option data" || echo "No changes"
+          git push
