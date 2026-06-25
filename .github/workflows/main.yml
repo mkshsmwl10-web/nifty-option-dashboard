@@ -1,11 +1,10 @@
-name: Update Nifty Option Data
+name: test
 
 on:
-  workflow_dispatch:
+workflow_dispatch:
 
 jobs:
-  update:
-    runs-on: ubuntu-latest
- steps:
-      - name: Test Workflow
-    run: echo Workflow is working
+test:
+runs-on: ubuntu-latest
+steps:
+- run: echo hello
