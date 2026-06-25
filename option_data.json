@@ -1,82 +1,97 @@
 {
   "spot": 25000,
   "atm": 25000,
-  "timestamp": "2026-06-25 08:58:16.133072",
-  "status": "hybrid_system",
+  "timestamp": "2026-06-25 09:10:38.959998",
+  "type": "github_free_system",
   "strikes": [
     {
       "strike": 24300,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 24400,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 24500,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 24600,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 24700,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 24800,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 24900,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 25000,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 25100,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 25200,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 25300,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 25400,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 25500,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 25600,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     },
     {
       "strike": 25700,
-      "oi": 0,
+      "ce_oi": 0,
+      "pe_oi": 0,
       "change_oi": 0
     }
   ]
