@@ -1,13 +1,27 @@
 import json
+import requests
 from datetime import datetime
 
-spot = 25000  # temporary (baad me API se aayega)
+# NSE unofficial endpoint (spot data)
+url = "https://www.nseindia.com/api/option-chain-indices?symbol=NIFTY"
+
+headers = {
+    "User-Agent": "Mozilla/5.0",
+    "Accept": "application/json"
+}
+
+session = requests.Session()
+session.get("https://www.nseindia.com", headers=headers)
+
+response = session.get(url, headers=headers)
+data = response.json()
+
+spot = data["records"]["underlyingValue"]
 
 atm = round(spot / 100) * 100
 
 strikes = []
 
-# ATM ± 7 strikes (100 points gap)
 for i in range(-7, 8):
     strike = atm + (i * 100)
     strikes.append({
@@ -17,7 +31,7 @@ for i in range(-7, 8):
         "change_oi": 0
     })
 
-data = {
+output = {
     "spot": spot,
     "atm": atm,
     "timestamp": str(datetime.now()),
@@ -25,6 +39,6 @@ data = {
 }
 
 with open("option_data.json", "w") as f:
-    json.dump(data, f, indent=2)
+    json.dump(output, f, indent=2)
 
-print("Dashboard JSON Updated")
+print("Live NIFTY data updated")
