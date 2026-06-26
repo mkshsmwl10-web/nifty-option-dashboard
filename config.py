@@ -1,0 +1,10 @@
+# Dashboard Settings
+
+SYMBOL = "NIFTY"
+
+STRIKE_GAP = 100
+
+ROWS_ABOVE = 7
+ROWS_BELOW = 7
+
+UPDATE_INTERVAL = 5
